@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_120114) do
+ActiveRecord::Schema.define(version: 2018_07_23_133820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,17 +130,14 @@ ActiveRecord::Schema.define(version: 2018_07_23_120114) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "imageables", force: :cascade do |t|
-    t.string "block_type"
-    t.bigint "block_id"
-    t.string "property_type"
-    t.bigint "property_id"
+  create_table "photos", force: :cascade do |t|
+    t.string "imageable_type"
+    t.bigint "imageable_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["block_type", "block_id"], name: "index_imageables_on_block_type_and_block_id"
-    t.index ["category_id"], name: "index_imageables_on_category_id"
-    t.index ["property_type", "property_id"], name: "index_imageables_on_property_type_and_property_id"
+    t.index ["category_id"], name: "index_photos_on_category_id"
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -170,6 +167,9 @@ ActiveRecord::Schema.define(version: 2018_07_23_120114) do
     t.integer "reference_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ameniable_type"
+    t.bigint "ameniable_id"
+    t.index ["ameniable_type", "ameniable_id"], name: "index_property_amenities_on_ameniable_type_and_ameniable_id"
     t.index ["amenity_id"], name: "index_property_amenities_on_amenity_id"
     t.index ["amenity_type_id"], name: "index_property_amenities_on_amenity_type_id"
   end
@@ -289,7 +289,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_120114) do
   add_foreign_key "blocks", "residential_properties"
   add_foreign_key "bookings", "blocks"
   add_foreign_key "cancellation_policies", "blocks"
-  add_foreign_key "imageables", "categories"
+  add_foreign_key "photos", "categories"
   add_foreign_key "properties", "countries"
   add_foreign_key "properties", "property_types"
   add_foreign_key "properties", "users"
