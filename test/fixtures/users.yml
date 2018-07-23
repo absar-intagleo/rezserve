@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dt_uuid: MyString
+  email: MyString
+  account_status: 1
+  user_type: one
+
+two:
+  dt_uuid: MyString
+  email: MyString
+  account_status: 1
+  user_type: two

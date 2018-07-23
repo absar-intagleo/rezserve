@@ -1,0 +1,2 @@
+class StarRating < ApplicationRecord
+end

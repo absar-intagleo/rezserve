@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  property_type: one
+  address: MyText
+  zip_code: MyString
+  city: MyString
+  state: MyString
+  contract_signer: MyString
+  designation: MyString
+  special_instructions: MyText
+  booking_cancellation_period: MyString
+  booking_cancellation_policy: MyText
+  user: one
+  country: one
+
+two:
+  name: MyString
+  property_type: two
+  address: MyText
+  zip_code: MyString
+  city: MyString
+  state: MyString
+  contract_signer: MyString
+  designation: MyString
+  special_instructions: MyText
+  booking_cancellation_period: MyString
+  booking_cancellation_policy: MyText
+  user: two
+  country: two

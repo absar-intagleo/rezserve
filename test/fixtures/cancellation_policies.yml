@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan: MyString
+  penalty: MyString
+  refundable: false
+  block: one
+
+two:
+  plan: MyString
+  penalty: MyString
+  refundable: false
+  block: two

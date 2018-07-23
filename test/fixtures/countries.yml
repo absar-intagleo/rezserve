@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  currency_code: MyString
+  time_zone: MyString
+
+two:
+  name: MyString
+  currency_code: MyString
+  time_zone: MyString

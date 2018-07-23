@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 1
+  fee: 1.5
+  duration_unit: MyString
+  property: one
+
+two:
+  name: MyString
+  type: 1
+  fee: 1.5
+  duration_unit: MyString
+  property: two

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  block_type: one
+  residential_property: one
+  rate: 1.5
+
+two:
+  name: MyString
+  block_type: two
+  residential_property: two
+  rate: 1.5

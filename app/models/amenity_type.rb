@@ -1,0 +1,2 @@
+class AmenityType < ApplicationRecord
+end

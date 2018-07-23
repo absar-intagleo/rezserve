@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  website: MyString
+  property: one
+  hotel_chain: one
+  star_rating: one
+  rating_source: one
+
+two:
+  website: MyString
+  property: two
+  hotel_chain: two
+  star_rating: two
+  rating_source: two

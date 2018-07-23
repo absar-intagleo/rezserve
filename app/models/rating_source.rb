@@ -1,0 +1,2 @@
+class RatingSource < ApplicationRecord
+end

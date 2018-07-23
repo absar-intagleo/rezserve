@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amenity: one
+  amenity_type: one
+  reference_id: 1
+
+two:
+  amenity: two
+  amenity_type: two
+  reference_id: 1

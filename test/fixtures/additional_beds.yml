@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bed_quantity: 1
+  bed_charges: 1.5
+  bed_charges_unit: MyString
+  block: one
+  bed_type: one
+
+two:
+  bed_quantity: 1
+  bed_charges: 1.5
+  bed_charges_unit: MyString
+  block: two
+  bed_type: two

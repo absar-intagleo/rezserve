@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chargeable_rate: 1.5
+  currency_code: MyString
+  email: MyString
+  phone_number: MyString
+  address: MyString
+  city: MyString
+  country_code: MyString
+  postal_code: MyString
+  locale: MyString
+  itinerary_id: MyString
+  confirmation_number: MyString
+  surcharge_total: 1.5
+  cancellation_number: MyString
+  cancellation_time: 2018-07-23 17:01:14
+  status: MyString
+  arrival_date: 2018-07-23 17:01:14
+  departure_date: 2018-07-23 17:01:14
+  wallet_name: MyString
+  block: one
+  dt_uuid: MyString
+  loyalty_id: MyString
+
+two:
+  chargeable_rate: 1.5
+  currency_code: MyString
+  email: MyString
+  phone_number: MyString
+  address: MyString
+  city: MyString
+  country_code: MyString
+  postal_code: MyString
+  locale: MyString
+  itinerary_id: MyString
+  confirmation_number: MyString
+  surcharge_total: 1.5
+  cancellation_number: MyString
+  cancellation_time: 2018-07-23 17:01:14
+  status: MyString
+  arrival_date: 2018-07-23 17:01:14
+  departure_date: 2018-07-23 17:01:14
+  wallet_name: MyString
+  block: two
+  dt_uuid: MyString
+  loyalty_id: MyString

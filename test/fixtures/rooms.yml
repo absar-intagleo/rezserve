@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  bed_detail: MyString
+  number_of_person: MyString
+  smoking_allowed: false
+  room_size_value: 1.5
+  room_size_unit: MyString
+  adults_only: false
+  wheel_chair_accessible: false
+  bed_type: MyString
+  bed_count: 1
+  block: one
+  room_type: one
+
+two:
+  name: MyString
+  bed_detail: MyString
+  number_of_person: MyString
+  smoking_allowed: false
+  room_size_value: 1.5
+  room_size_unit: MyString
+  adults_only: false
+  wheel_chair_accessible: false
+  bed_type: MyString
+  bed_count: 1
+  block: two
+  room_type: two
