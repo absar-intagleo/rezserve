@@ -16,7 +16,7 @@ class Api::V1::Authentication::UsersController < Api::V1::Authentication::BaseCo
 	def signin
 		@user = User.find_by_email(params[:email])
 		if @user.present?
-			render json: {success: true, user: @user.json}
+			render json: {success: true, user: @user}
 		else
 			render json: {success: false, message: "User does not exist"}
 		end
