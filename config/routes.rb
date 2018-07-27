@@ -11,10 +11,11 @@ Rails.application.routes.draw do
           end
         end
   		end
-  		namespace :property do
-  		end
-  		namespace :consumer do
-  		end
-  	end
+      namespace :property do
+      end
+      namespace :consumer do
+      end
+    end
   end
+	post 'initialize_property' => 'api/v1/consumer/properties#new'
 end
