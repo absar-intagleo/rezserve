@@ -39,8 +39,8 @@ RatingSource::RATINGSOURCES.each do |source|
   RatingSource.find_or_create_by!(name: source)
 end
 
-require 'csv'
-CSV.parse(File.open('https://s3.amazonaws.com/comencia-assets/csv_files/HotelChains.csv', "r:ISO-8859-1")).each_with_index do |chain, index|
+require "csv"
+CSV.parse(File.read("HotelChains.csv")).each_with_index do |chain, index|
 	if index > 0
 		HotelChain.find_or_create_by!(name: chain.first.split("|").last, chain_code: chain.first.split("|").first)
 	end
