@@ -29,7 +29,12 @@ end
 
 ISO3166::Country.all.each do |country|	
 	Country.find_or_create_by!(name: country.name, alpha3: country.alpha3, country_code: country.country_code, currency_code: country.currency_code, time_zone:  country.timezones.zone_info.map{|c| c.identifier}.join(",") )
+  Currency.find_or_create_by!(name: country.try(:currency).try(:name), symbol: country.try(:currency).try(:symbol), iso_code: country.try(:currency).try(:iso_code) )
 end
+
+ActiveSupport::TimeZone.all.each do |tz|  #map{|tz| [, tz.utc_offset/3600]}
+  TimeZone.find_or_create_by!(name: tz.name, utc_offset: tz.utc_offset )
+end  
 
 StarRating::STARRATINGS.each do |rating|
   StarRating.find_or_create_by!(name: rating)

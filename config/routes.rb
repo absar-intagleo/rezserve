@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   post 'signin' => 'api/v1/authentication/users#signin'
   post 'update_user' => 'api/v1/authentication/users#update'
   post 'property_static_data' => 'api/v1/consumer/properties#new'
-  post 'create_property' => 'api/v1/consumer/properties#new'
+  post 'create_property' => 'api/v1/consumer/properties#save_property_information'
 end
