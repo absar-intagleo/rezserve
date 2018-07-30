@@ -16,18 +16,18 @@ class Api::V1::Authentication::UsersController < Api::V1::Authentication::BaseCo
 	end
 
 	def signin
-		@user = User.find_by_email(params[:email])
+		@user = User.select(:id, :first_name, :last_name, :email, :dt_uuid, :user_type_id, :account_status).find_by_email(params[:email])
 		if @user.present?
-			render json: {success: true, user: @user}
+			render 'signin'
 		else
 			render json: {success: false, message: "User does not exist"}
 		end
 	end
 
 	def update
-		@user = User.find_by_dt_uuid(params[:user][:dt_uuid])
-		if @user.update(user_params)
-			render json: {success: true, user: @user }
+		@user = User.select(:id, :first_name, :last_name, :email, :dt_uuid, :user_type_id, :account_status).find_by_dt_uuid(params[:user][:dt_uuid])
+		if @user.update(user_params) 
+			render 'update'
 		else
 			render json: {success: false, message: @user.errors.full_messages.join(",")}
 		end
