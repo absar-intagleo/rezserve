@@ -27,7 +27,7 @@ class Api::V1::Authentication::UsersController < Api::V1::Authentication::BaseCo
 	def update
 		@user = User.find_by_dt_uuid(params[:user][:dt_uuid])
 		if @user.update(user_params)
-			render json: {success: true, user: @user.except(:created_at, :updated_at) }
+			render json: {success: true, user: @user }
 		else
 			render json: {success: false, message: @user.errors.full_messages.join(",")}
 		end
