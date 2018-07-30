@@ -17,5 +17,9 @@ Rails.application.routes.draw do
       end
     end
   end
-	post 'initialize_property' => 'api/v1/consumer/properties#new'
+	post 'signup' => 'api/v1/authentication/users#create'
+  post 'signin' => 'api/v1/authentication/users#signin'
+  post 'update_user' => 'api/v1/authentication/users#update'
+  post 'property_static_data' => 'api/v1/consumer/properties#new'
+  post 'create_property' => 'api/v1/consumer/properties#new'
 end
