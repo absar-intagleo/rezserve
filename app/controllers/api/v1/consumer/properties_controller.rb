@@ -17,7 +17,16 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 		if @property.save			
 			render 'save_property_information'
 		else
-			render json: {success: true, property: @property.errors.full_messages.join(", ")}
+			render json: {success: true, message: @property.errors.full_messages.join(", ")}
+		end
+	end
+
+	def show
+		@property = Property.find(params[:property_id])
+		if @property.present?			
+			render 'save_property_information'
+		else
+			render json: {success: true, message: 'Property not Found'}
 		end
 	end
 
