@@ -1,7 +1,6 @@
 class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseController
 
 	def new
-		# @countries = Country.select(:id, :name, :alpha3, :currency_code, :country_code, :time_zone).all.order(:name)
 		@currencies = Currency.select(:id, :name, :symbol, :iso_code).all.order(:name)
 		@chains = HotelChain.select(:id, :chain_code, :name).all.order(:name)
 		@star_rating = StarRating.select(:id, :name).all.order(:name)

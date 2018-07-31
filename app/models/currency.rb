@@ -1,4 +1,4 @@
 class Currency < ApplicationRecord
-	has_many :currencies, dependent: :destroy
+	has_many :properties, dependent: :destroy
   
 end

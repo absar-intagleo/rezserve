@@ -8,6 +8,6 @@ class Property < ApplicationRecord
   has_many :taxes, dependent: :destroy
   has_many :service_fees, dependent: :destroy
   has_many :photos, as: :imageable, dependent: :destroy
-  has_many :property_amenities, as: :imageable, dependent: :destroy
+  has_many :property_amenities, as: :ameniable, dependent: :destroy
   
 end

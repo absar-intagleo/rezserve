@@ -26,7 +26,7 @@ class Api::V1::Authentication::UsersController < Api::V1::Authentication::BaseCo
 
 	def update
 		@user = User.select(:id, :first_name, :last_name, :email, :dt_uuid, :user_type_id, :account_status).find_by_dt_uuid(params[:user][:dt_uuid])
-		if @user.update(user_params) 
+		if @user.present? && @user.update(user_params) 
 			render 'update'
 		else
 			render json: {success: false, message: @user.errors.full_messages.join(",")}

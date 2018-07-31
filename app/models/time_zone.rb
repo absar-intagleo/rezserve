@@ -1,3 +1,3 @@
 class TimeZone < ApplicationRecord
-	has_many :time_zones, dependent: :destroy
+	has_many :properties, dependent: :destroy
 end
