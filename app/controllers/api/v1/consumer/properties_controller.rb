@@ -31,10 +31,18 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 
 	private
 	def property_params
-		params[:property].permit(:name, :address, :address_line_1, :address_line_2, :latitude, :longitude, :time_zone, :zip_code, :city, :state, :currency_id, :time_zone_id, :property_type_id, :user_id, :facebook_link, :skype_id, :twitter_address, :country, residential_property_attributes: [:hotel_chain_id, :star_rating_id, :rating_source_id])
-	end
-	def resi_property_params
-		params[:property].permit(:website, :hotel_chain_id, :star_rating_id, :rating_source_id)
+		params[:property].permit(:name, :address, :latitude, :longitude, :time_zone, :zip_code, :city, :state, :currency_id, :time_zone_id, :property_type_id, :user_id, :facebook_address, :skype_address, :twitter_address, :country)
 	end
 
+	def resi_property_params
+		resi_params = { 
+				hotel_chain_id: params[:hotel_chain_id],
+				star_rating_id: params[:star_rating_id],
+				rating_source_id: params[:rating_source_id],
+				website: params[:website]
+			}
+		resi_params	
+	end
+
+	 
 end

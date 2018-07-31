@@ -4,8 +4,7 @@ json.property do
 	json.id @property.id 
 	json.name @property.name
   json.property_type_id @property.property_type_id
-  json.address_line_1 @property.address_line_1
-  json.address_line_2 @property.address_line_2
+  json.address @property.address
   json.longitude @property.longitude
   json.latitude @property.latitude
   json.zip_code @property.zip_code
@@ -22,8 +21,8 @@ json.property do
   json.special_instructions @property.special_instructions
   json.booking_cancellation_period @property.booking_cancellation_period
   json.booking_cancellation_policy @property.booking_cancellation_policy
-  json.facebook_link @property.facebook_link
-  json.skype_id @property.skype_id
+  json.facebook_address @property.facebook_address
+  json.skype_address @property.skype_address
   json.twitter_address @property.twitter_address
   json.residential_property_id @property.residential_property_id
 end
