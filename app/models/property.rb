@@ -1,7 +1,6 @@
 class Property < ApplicationRecord
   belongs_to :property_type
   belongs_to :user
-  belongs_to :country
   belongs_to :currency
   belongs_to :time_zone
   belongs_to :residential_property

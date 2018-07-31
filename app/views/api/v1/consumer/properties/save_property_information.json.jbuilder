@@ -10,7 +10,7 @@ json.property do
   json.zip_code @property.zip_code
   json.city @property.city
   json.state @property.state
-  json.country_id @property.country_id
+  json.country @property.country
   json.currency_id @property.currency_id
   json.time_zone_id @property.time_zone_id
   json.star_rating_id @property.residential_property.star_rating_id

@@ -28,7 +28,7 @@ PropertyType::PROPERTYTYPES.each do |record_val|
 end
 
 ISO3166::Country.all.each do |country|	
-	Country.find_or_create_by!(name: country.name, alpha3: country.alpha3, country_code: country.country_code, currency_code: country.currency_code, time_zone:  country.timezones.zone_info.map{|c| c.identifier}.join(",") )
+	# Country.find_or_create_by!(name: country.name, alpha3: country.alpha3, country_code: country.country_code, currency_code: country.currency_code, time_zone:  country.timezones.zone_info.map{|c| c.identifier}.join(",") )
   Currency.find_or_create_by!(name: country.try(:currency).try(:name), symbol: country.try(:currency).try(:symbol), iso_code: country.try(:currency).try(:iso_code) )
 end
 
