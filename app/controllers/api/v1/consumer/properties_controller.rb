@@ -1,13 +1,13 @@
 class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseController
 
 	def new
-		@countries = Country.select(:id, :name, :alpha3, :currency_code, :country_code, :time_zone).all
-		@currencies = Currency.select(:id, :name, :symbol, :iso_code).all
-		@chains = HotelChain.select(:id, :chain_code, :name).all
-		@star_rating = StarRating.select(:id, :name).all
-		@rating_source = RatingSource.select(:id, :name).all
-		@timezones = TimeZone.select(:id, :name, :utc_offset).all
-		@property_types = PropertyType.select(:id, :name).all
+		@countries = Country.select(:id, :name, :alpha3, :currency_code, :country_code, :time_zone).all.order(:name)
+		@currencies = Currency.select(:id, :name, :symbol, :iso_code).all.order(:name)
+		@chains = HotelChain.select(:id, :chain_code, :name).all.order(:name)
+		@star_rating = StarRating.select(:id, :name).all.order(:name)
+		@rating_source = RatingSource.select(:id, :name).all.order(:name)
+		@timezones = TimeZone.select(:id, :name, :utc_offset).all.order(:utc_offset)
+		@property_types = PropertyType.select(:id, :name).all.order(:name)
 	end
 
 	def save_property_information
