@@ -11,7 +11,7 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 	end
 
 	def save_property_information
-		@user = User.find(params[:property]["user_id"])
+		@user = User.find_by_dt_uuid(params[:property]["user_id"])
 		@property = @user.properties.build(property_params)
 		@property.build_residential_property(resi_property_params)
 		if @property.save			
