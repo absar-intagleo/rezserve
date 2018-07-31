@@ -21,7 +21,7 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 	end
 
 	def show
-		@property = Property.find(params[:property_id]) rescue nil
+		@property = Property.find(params[:property_id])
 		if @property.present?			
 			render 'save_property_information'
 		else
