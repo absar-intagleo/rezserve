@@ -1,4 +1,5 @@
 json.success true
+json.message 'Your property has been created successfully'
 json.property do
 	json.id @property.id 
 	json.name @property.name

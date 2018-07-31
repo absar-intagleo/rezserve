@@ -1,4 +1,5 @@
 json.success true
+json.message 'Signed in Successfully'
 json.user  do 
 	json.id @user.id
 	json.first_name @user.first_name

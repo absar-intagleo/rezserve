@@ -1,4 +1,3 @@
-json.countries @countries
 json.currencies @currencies
 json.chains @chains
 json.star_rating @star_rating
