@@ -11,12 +11,23 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 
 	def save_property_information
 		@user = User.find_by_dt_uuid(params[:dt_uuid])
-		@property = @user.properties.build(property_params)
-		@property.build_residential_property(resi_property_params)
-		if @property.save			
-			render 'save_property_information'
+		if @user.present?
+			@property = @user.properties.build(property_params)
+			@property.build_policy(minimum_age_limt: nil)
+			@property.build_residential_property(resi_property_params)
+			Tax::TAX_ENTITIES.each do |entity|
+				@property.taxes.build(name: Tax::TAX_VALUES[entity])
+			end
+			ServiceFee::FEES_ENTITIES.each do |entity|
+				@property.service_fees.build(name: ServiceFee::FEES_VALUES[entity])
+			end
+			if @property.save!		
+				render 'save_property_information'
+			else
+				render json: {success: false, message: @property.errors.full_messages.join(", ")}
+			end
 		else
-			render json: {success: true, message: @property.errors.full_messages.join(", ")}
+			render json: {success: false, message: "User does not exit"}
 		end
 	end
 
@@ -25,13 +36,13 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 		if @property.present?			
 			render 'save_property_information'
 		else
-			render json: {success: true, message: 'Property not Found'}
+			render json: {success: false, message: 'Property not Found'}
 		end
 	end
 
 	private
 	def property_params
-		params[:property].permit(:name, :address, :latitude, :longitude, :time_zone, :zip_code, :city, :state, :currency_id, :time_zone_id, :property_type_id, :user_id, :facebook_address, :skype_address, :twitter_address, :country)
+		params[:property].permit(:name, :address, :latitude, :longitude, :time_zone, :zip_code, :city, :state, :currency_id, :time_zone_id, :property_type_id, :user_id, :facebook_address, :skype_address, :twitter_address, :country, service_fees_attributes: [:id, :name, :type, :fee, :duration_unit, :_destroy], taxes_attributes: [:id, :name, :fee_duration_unit, :fee_percentage, :_destroy], policy_attributes: [:id, :minimum_age_limt, :check_in_time, :check_out_time, :age_category, :adult_age_limit, :infant_age_limit, :smoking_policy, :special_instruction, :booking_cancellation_period, :booking_cancellation_policy, :_destroy])
 	end
 
 	def resi_property_params

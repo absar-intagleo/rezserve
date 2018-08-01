@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  minimum_age_limt: 1
+  check_in_time: MyString
+  check_out_time: MyString
+  age_category: MyString
+  adult_age_limit: 1
+  infant_age_limit: 1
+  smoking_policy: MyString
+  special_instruction: MyText
+  booking_cancellation_period: MyString
+  booking_cancellation_policy: MyText
+  property: one
+
+two:
+  minimum_age_limt: 1
+  check_in_time: MyString
+  check_out_time: MyString
+  age_category: MyString
+  adult_age_limit: 1
+  infant_age_limit: 1
+  smoking_policy: MyString
+  special_instruction: MyText
+  booking_cancellation_period: MyString
+  booking_cancellation_policy: MyText
+  property: two
