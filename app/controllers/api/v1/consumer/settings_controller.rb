@@ -11,11 +11,15 @@ class Api::V1::Consumer::SettingsController < ApplicationController
 
 	def create
 		@property = Property.find(params[:property_id])
-		@policy = @property.policy
-		if @policy.update(setting_params)
-			render json: {success: true, message: 'Property Settings have been added successfully'}
+		if @property.present?
+			@policy = @property.policy
+			if @policy.update(setting_params)
+				render json: {success: true, message: 'Property Settings have been added successfully'}
+			else
+				render json: {success: false, message: @policy.errors.full_messages.join(', ')} 
+			end
 		else
-			render json: {success: false, message: @policy.errors.full_messages.join(', ')} 
+			render json: {success: false, message: 'Property not Found'}
 		end
 	end
 

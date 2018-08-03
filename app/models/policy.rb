@@ -6,5 +6,21 @@ class Policy < ApplicationRecord
   AGE_CATEGORIES = ['Adults Only', 'Adults and Children']
   ADULT_AGE_LIMIT = [15, 16, 17, 18, 19]
   INFANT_AGE_LIMIT = [1, 2]
-  AGE_CATEGORIES_LOOKUP = { :adults_only => 'Adults Only', :adults_and_children => 'Adults and Children'}
+
+  CANCELLATION_PERIOD = ["24 hours before Check in", "Within 12 hours of booking"]
+  CANCELLATION_POLICY = ["Free", "1 Night + Taxes"]
+  SMOKING_POLICIES = ["Non-Smoking", "Designated Areas"]
+  ROOM_RATE_UNITS = ["Per Day", "Per Night", "Per Stay"]
+  PARKING_POLICIES = ["Free", "Paid"]
+  PARKING_RATE_UNITS = ["Per Day", "Per Stay"]
+  PET_POLICIES = ["Free", "Paid", "Not Allowed"]
+
+  AGE_CATEGORIES_LOOKUP = { :adults_only => 'Adults Only', :adults_and_children => 'Adults and Children' }
+  CANCELLATION_PERIOD_LOOKUP = { "24_hours_before_check_in" => "24 hours before Check in", "winth_12_hours_of_booking" => "Within 12 hours of booking" } 
+  CANCELLATION_POLICY_LOOKUP = { "free" => "Free", "1_night_and_taxes" => "1 Night + Taxes" } 
+  SMOKING_POLICIES_LOOKUP = { :not_smoking => "Non-smoking", :designated_areas => "Designated Areas" }
+  ROOM_RATE_UNITS_LOOKUP = { :per_day => "Per Day", :per_night => "Per Night", "Per Stay" }
+  PARKING_POLICIES_LOOKUP = { :free => "Free", :paid => "Paid" }
+  PARKING_RATE_UNITS_LOOKUP = { :per_day => "Per Day", :per_stay => "Per Stay" }
+  PET_POLICIES_LOOKUP = { :free => "Free", :paid => "Paid", :not_allowed => "Not Allowed" }
 end
