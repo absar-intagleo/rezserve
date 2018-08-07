@@ -1,5 +1,5 @@
 class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseController
-
+	before_action :validate_params, only: :save_property_information
 	def new
 		@currencies = Currency.select(:id, :name, :symbol, :iso_code).all.order(:name)
 		@chains = HotelChain.select(:id, :chain_code, :name).all.order(:name)
@@ -16,10 +16,10 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 			@property.build_policy(minimum_age_limt: nil)
 			@property.build_residential_property(resi_property_params)
 			Tax::TAX_ENTITIES.each do |entity|
-				@property.taxes.build(name: Tax::TAX_VALUES[entity])
+				@property.taxes.build(name: entity)
 			end
 			ServiceFee::FEES_ENTITIES.each do |entity|
-				@property.service_fees.build(name: ServiceFee::FEES_VALUES[entity])
+				@property.service_fees.build(name: entity)
 			end
 			if @property.save!		
 				render 'save_property_information'
@@ -55,5 +55,10 @@ class Api::V1::Consumer::PropertiesController < Api::V1::Consumer::BaseControlle
 		resi_params	
 	end
 
+	def validate_params
+		errors = []
+		errors << "dt_uuid must be present" unless params[:dt_uuid].present?
+		render json: {success: false, message: errors.join(", ")} and return if errors.present?
+	end
 	 
 end

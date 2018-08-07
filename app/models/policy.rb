@@ -19,7 +19,7 @@ class Policy < ApplicationRecord
   CANCELLATION_PERIOD_LOOKUP = { "24_hours_before_check_in" => "24 hours before Check in", "winth_12_hours_of_booking" => "Within 12 hours of booking" } 
   CANCELLATION_POLICY_LOOKUP = { "free" => "Free", "1_night_and_taxes" => "1 Night + Taxes" } 
   SMOKING_POLICIES_LOOKUP = { :not_smoking => "Non-smoking", :designated_areas => "Designated Areas" }
-  ROOM_RATE_UNITS_LOOKUP = { :per_day => "Per Day", :per_night => "Per Night", "Per Stay" }
+  ROOM_RATE_UNITS_LOOKUP = { :per_day => "Per Day", :per_night => "Per Night", :per_stay => "Per Stay" }
   PARKING_POLICIES_LOOKUP = { :free => "Free", :paid => "Paid" }
   PARKING_RATE_UNITS_LOOKUP = { :per_day => "Per Day", :per_stay => "Per Stay" }
   PET_POLICIES_LOOKUP = { :free => "Free", :paid => "Paid", :not_allowed => "Not Allowed" }

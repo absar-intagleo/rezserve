@@ -13,7 +13,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
       t.string :booking_cancellation_period
       t.text :booking_cancellation_policy
       t.references :user, foreign_key: true
-      t.references :country, foreign_key: true
+      # t.references :country, foreign_key: true
 
       t.timestamps
     end
